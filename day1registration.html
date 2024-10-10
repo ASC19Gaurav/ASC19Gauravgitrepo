@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<head>
+    
+    <title>Cooking Class Registration</title>
+    <link rel="stylesheet" href="day1registration.css">
+<script>
+    function reseted(){
+        alert('reset has been done');
+    }
+</script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Cooking Class Registration</h1>
+        <p>Join our delicious cooking classes! Fill out the form below to reserve your spot.</p>
+        
+            <form id="reg">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="age">Choose a age:</label>
+                <input type="range" id="myRange" min="18" max="80" value="50" step="1">
+                <p>Age: <span id="rangeValue">50</span></p>
+                
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+    
+                <label for="class">Select a Class:</label>
+                <select id="class" name="class" required>
+                    <option value="italian">Italian Cuisine</option>
+                    <option value="baking">Baking Basics</option>
+                    <option value="vegan">Vegan Cooking</option>
+                    <option value="sushi">Sushi Making</option>
+                    <option value="other">Other</option>
+                </select>
+    
+                <label for="date" style="color: red;font-size: 10   px;">Choose a Date:</label>
+                <input type="date" id="date" name="date" required>
+    
+                <label for="level">Experience Level:</label>
+                <select id="level" name="level" required>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+    
+                <label>Dietary Restrictions:</label>
+                <input type="radio" id="yes" name="diet" value="yes">
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name="diet" value="no" checked>
+                <label for="no">No</label>
+    
+                <label for="notes">Additional Notes:</label>
+                <textarea id="notes" name="notes" rows="4"></textarea>
+                
+                <button type="submit" onclick="alert('submitted');">Submit Registration</button>
+                <br>
+                <button type="reset" value="Reset" onclick="reseted()">Reset</button>
+            </form>
+        
+    </div>
+    
+
+
+<script>
+    const slider = document.getElementById("myRange");
+    const output = document.getElementById("rangeValue");
+    
+
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+
+
+    }
+
+     const form = document.getElementById('reg').addEventListener('submit',function(event){
+        event.preventDefault();
+        const formData = new FormData(this);
+        data = {}
+        formData.forEach((value,key) => {
+            data[key]=value;
+        });
+        console.log(data);
+     });
+    
+
+
+</script>
+</body>
+</html>
