@@ -1,95 +1,146 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    
     <title>Cooking Class Registration</title>
     <link rel="stylesheet" href="day1registration.css">
-<script>
-    function reseted(){
-        alert('reset has been done');
-    }
-</script>
-
+    <script>
+        function reseted(){
+            alert('Reset has been done');
+        }
+    </script>
 </head>
-<body>
+<body><div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Class</th>
+                <th>Date</th>
+                <th>Experience Level</th>
+                <th>Dietary Restrictions</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody id="dynamic">
+            <tr id="dynamicrow"></tr>
+        </tbody>
+    </table>
+</div>
+<br>
     <div class="container">
         <h1>Cooking Class Registration</h1>
         <p>Join our delicious cooking classes! Fill out the form below to reserve your spot.</p>
-        
-            <form id="reg">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+
+        <form id="reg">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
     
-                <label for="age">Choose a age:</label>
-                <input type="range" id="myRange" min="18" max="80" value="50" step="1">
-                <p>Age: <span id="rangeValue">50</span></p>
-                
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
+            <label for="age">Choose an age:</label>
+            <input type="range" id="myRange" min="18" max="80" value="50" step="1">
+            <p>Age: <span id="rangeValue">50</span></p>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
     
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
     
-                <label for="class">Select a Class:</label>
-                <select id="class" name="class" required>
-                    <option value="italian">Italian Cuisine</option>
-                    <option value="baking">Baking Basics</option>
-                    <option value="vegan">Vegan Cooking</option>
-                    <option value="sushi">Sushi Making</option>
-                    <option value="other">Other</option>
-                </select>
+            <label for="class">Select a Class:</label>
+            <select id="class" name="class" required>
+                <option value="italian">Italian Cuisine</option>
+                <option value="baking">Baking Basics</option>
+                <option value="vegan">Vegan Cooking</option>
+                <option value="sushi">Sushi Making</option>
+                <option value="other">Other</option>
+            </select>
     
-                <label for="date" style="color: red;font-size: 10   px;">Choose a Date:</label>
-                <input type="date" id="date" name="date" required>
+            <label for="date" style="color: red;font-size: 10px;">Choose a Date:</label>
+            <input type="date" id="date" name="date" required>
     
-                <label for="level">Experience Level:</label>
-                <select id="level" name="level" required>
-                    <option value="beginner">Beginner</option>
-                    <option value="intermediate">Intermediate</option>
-                    <option value="advanced">Advanced</option>
-                </select>
+            <label for="level">Experience Level:</label>
+            <select id="level" name="level" required>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
     
-                <label>Dietary Restrictions:</label>
-                <input type="radio" id="yes" name="diet" value="yes">
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="diet" value="no" checked>
-                <label for="no">No</label>
+            <label>Dietary Restrictions:</label>
+            <input type="radio" id="yes" name="diet" value="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="diet" value="no" checked>
+            <label for="no">No</label>
     
-                <label for="notes">Additional Notes:</label>
-                <textarea id="notes" name="notes" rows="4"></textarea>
-                
-                <button type="submit" onclick="alert('submitted');">Submit Registration</button>
-                <br>
-                <button type="reset" value="Reset" onclick="reseted()">Reset</button>
-            </form>
-        
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+            
+            <button type="submit">Submit Registration</button>
+            <br>
+            <button type="reset" value="Reset" onclick="reseted()">Reset</button>
+        </form>
     </div>
+
     
 
+    <script>
+        const slider = document.getElementById("myRange");
+        const output = document.getElementById("rangeValue");
+        
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+        
+        const name1 = document.getElementById("name");
+        const age1 = document.getElementById("myRange");
+        const email1 = document.getElementById("email");
+        const phone1 = document.getElementById("phone");
+        const class1 = document.getElementById("class");
+        const date1 = document.getElementById("date");
+        const level1 = document.getElementById("level");
+        const dietry1 = document.getElementsByName("diet");
+        const notes1 = document.getElementById("notes");
 
-<script>
-    const slider = document.getElementById("myRange");
-    const output = document.getElementById("rangeValue");
-    
+        const dynamicRow = document.getElementById("dynamicrow");
 
-    slider.oninput = function() {
-        output.innerHTML = this.value;
+        function updateTable() {
+            dynamicRow.innerHTML = `
+                <td>${name1.value}</td>
+                <td>${age1.value}</td>
+                <td>${email1.value}</td>
+                <td>${phone1.value}</td>
+                <td>${class1.value}</td>
+                <td>${date1.value}</td>
+                <td>${level1.value}</td>
+                <td>${Array.from(dietry1).find(d => d.checked)?.value || 'No'}</td>
+                <td>${notes1.value}</td>
+            `;
+        }
 
+        name1.addEventListener('input', updateTable);
+        slider.addEventListener('input', updateTable);
+        email1.addEventListener('input', updateTable);
+        phone1.addEventListener('input', updateTable);
+        class1.addEventListener('input', updateTable);
+        date1.addEventListener('input', updateTable);
+        level1.addEventListener('input', updateTable);
+        notes1.addEventListener('input', updateTable);
 
-    }
+        document.getElementById('reg').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            let data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
 
-     const form = document.getElementById('reg').addEventListener('submit',function(event){
-        event.preventDefault();
-        const formData = new FormData(this);
-        data = {}
-        formData.forEach((value,key) => {
-            data[key]=value;
+            let existingEntries = JSON.parse(localStorage.getItem('formData12')) || [];
+            existingEntries.push(data);
+            localStorage.setItem('formData12', JSON.stringify(existingEntries));
+            
+            alert('Registration submitted!');
         });
-        console.log(data);
-     });
-    
-
-
-</script>
+    </script>
 </body>
 </html>

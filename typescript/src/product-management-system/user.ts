@@ -4,7 +4,7 @@ export interface User {
         age: number;
         email: string;
         phone: number;
-        class: string;
+        class9: string;
         level: string;
         dietary: boolean; 
         notes: string;
