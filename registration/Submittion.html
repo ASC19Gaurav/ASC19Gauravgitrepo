@@ -159,8 +159,23 @@
             
         }
         }
+
+        function deletee() {
+            if(formData){
+                var index = formData.findIndex(function(data) {
+            return finding.value === data.name;
+        });
+        if (index !== -1) {
+            formData.splice(index, 1); 
+            localStorage.setItem('formData12', JSON.stringify(formData));
+            location.reload();
+        }
+
+        }
+       
+        }
         
-        
+
 
         
         if (formData) {
