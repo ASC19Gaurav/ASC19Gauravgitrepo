@@ -4,7 +4,7 @@
 ## Support Required
 ## My Contribuion
 
-# Week :
+# Week 2:
 ## Learning
 - Static and dynamic input in the table from a form using 
   - Local storage
