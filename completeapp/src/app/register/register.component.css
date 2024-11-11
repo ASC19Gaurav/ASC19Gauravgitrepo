@@ -1,0 +1,44 @@
+
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; Full viewport height */
+  }
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: flex;
+    margin: 10px 0 5px;
+}
+
+button {
+   
+    background-color: rgba(152, 152, 152,0.4);
+    margin-top: 5%;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 50%;
+    height: 15%;
+    font-size: larger;
+}
+
+button:hover {
+    background-color: rgba(59, 166, 83,0.4);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  background-color:#e7f1ff;
+}

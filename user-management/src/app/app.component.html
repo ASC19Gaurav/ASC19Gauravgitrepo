@@ -1,0 +1,82 @@
+<div class="container">
+  <h1>Cooking Class Registration</h1>
+  <p>Join our delicious cooking classes! Fill out the form below to reserve your spot.</p>
+
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    {{userForm.value | json}} 
+    <hr>
+    {{userModel | json}}
+    
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required [(ngModel)]="userModel.name">
+
+      <label for="age">Choose an age:</label>
+      <input type="text" name="age" [(ngModel)]="userModel.age" >
+      
+      
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required [(ngModel)]="userModel.email">
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required [(ngModel)]="userModel.phone">
+
+      <label for="class">Select a Class:</label>
+      <select id="class" class="custom-select" name="class" required [(ngModel)]="userModel.classs">
+        <option value="" disabled selected>I am interested in</option>
+        <option *ngFor="let class of clases" [value]="class">{{ class }}</option> 
+    </select>
+
+      <label for="date" style="color: red; font-size: 10px;">Choose a Date:</label>
+      <input type="date" id="date" name="date" required [(ngModel)]="userModel.date">
+
+      <label for="level">Experience Level:</label>
+      <select id="level" class="custom-select" name="level" required [(ngModel)]="userModel.level">
+        <option selected >my level</option>
+        <option *ngFor="let level of levels">{{level}}</option>
+          
+      </select>
+
+      <label>Dietary Restrictions:</label>
+      <input type="radio" id="yes" name="diet" value="yes" [(ngModel)]="userModel.dietary">
+      <label for="yes">Yes</label>
+      <input type="radio" id="no" name="diet" value="no" checked [(ngModel)]="userModel.dietary"> 
+      <label for="no">No</label>
+
+      <label for="notes">Additional Notes:</label>
+      <textarea id="notes" name="notes" rows="4" [(ngModel)]="userModel.notes"></textarea>
+
+      <button type="submit">Submit Registration</button>
+      <br>
+      <button type="button">Reset</button>
+  </form>
+  
+</div>
+<h2>Registered Users</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Class</th>
+        <th>Date</th>
+        <th>Level</th>
+        <th>Dietary Restrictions</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.age }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.classs }}</td>
+        <td>{{ user.date | date }}</td>
+        <td>{{ user.level }}</td>
+        <td>{{ user.dietary }}</td>
+        <td>{{ user.notes }}</td>
+      </tr>
+    </tbody>
+  </table>

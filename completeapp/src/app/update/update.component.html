@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<div class="container">
+
+
+<form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+    
+    <label for="id">ID:</label>
+    <input type="number" id="id" formControlName="id" />
+  
+    <label for="fieldSelector">Select Field to Update:</label>
+    <select id="fieldSelector" formControlName="selectedField" (change)="onFieldChange($event)">
+      <option value="name">Name</option>
+      <option value="age">Age</option>
+      <option value="email">Email</option>
+      <option value="phone">Phone</option>
+      <option value="class">Class</option>
+      <option value="date">Date</option>
+      <option value="level">Level</option>
+      <option value="dietry">Dietary Restrictions</option>
+      <option value="notes">Notes</option>
+    </select>
+  
+    <div *ngIf="showInputField">
+      <label for="inputField">Enter Value:</label>
+      <input id="inputField" type="text" formControlName="inputValue" />
+    </div>
+  
+    <div *ngIf="showDropdownClass">
+      <label for="classDropdown">Select Class:</label>
+      <select id="classDropdown" formControlName="inputValue">
+        <option value="classA">Class A</option>
+        <option value="classB">Class B</option>
+    
+      </select>
+    </div>
+  
+    <div *ngIf="showDropdownLevel">
+      <label for="levelDropdown">Select Level:</label>
+      <select id="levelDropdown" formControlName="inputValue">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+    </div>
+  
+    <div *ngIf="showDatePicker">
+      <label for="datePicker">Select Date:</label>
+      <input id="datePicker" type="date" formControlName="inputValue" />
+    </div>
+  
+    <div *ngIf="showDietaryOptions">
+      <label>Dietary Restrictions:</label>
+      <label><input type="radio" formControlName="inputValue" value="yes" /> Yes</label>
+      <label><input type="radio" formControlName="inputValue" value="no" /> No</label>
+    </div>
+  
+
+    <button type="submit">Update</button>
+  </form>
+</div>
