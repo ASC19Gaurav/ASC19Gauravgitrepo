@@ -32,6 +32,7 @@ export class LoginComponent {
       if(this.emailid==email &&this.password == password){
         alert("Login Succesful!!");
         this.authservice.isLoggedIn();
+        sessionStorage.setItem('loggedIn', 'yes');
         this.router.navigate(['/home']);
 
 
