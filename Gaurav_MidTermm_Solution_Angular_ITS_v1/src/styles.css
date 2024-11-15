@@ -7,6 +7,14 @@ body {
 body {
   margin: 0;
   background-color:blanchedalmond;
-  background-image: url("../public/Application.png");
+  background-image: url("../public/Application.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: center;
+  background-size: cover;
+
+  
+  
+
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }

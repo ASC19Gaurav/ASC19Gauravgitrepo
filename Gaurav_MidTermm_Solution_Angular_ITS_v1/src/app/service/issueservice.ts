@@ -3,13 +3,15 @@ import { Issue } from "../model/Issue";
 import { Observable } from "rxjs";
 import { map,switchMap } from 'rxjs/operators';
 import { HttpClient } from "@angular/common/http";
+import { AdminUser } from "../model/admins";
 
 @Injectable({
     providedIn:"root"
 })
 
 export class IssueEnrollment{
-    private baseUrl ="http://localhost:3000/issues"
+    private baseUrl ="http://localhost:3000/issues";
+    private authUrl = 'http://localhost:3000/adminusers'
 
     constructor(private http:HttpClient){
 
@@ -85,5 +87,13 @@ export class IssueEnrollment{
                 return this.http.put<Issue>(`${this.baseUrl}/${id}`, issue);
             })
         );
+    }
+
+    getAuthUsers(): Observable<AdminUser[]> {
+        return this.http.get<AdminUser[]>(this.authUrl);
+    }
+
+    adminenroll(adminuser: AdminUser): Observable<any> {
+        return this.http.post<any>(this.authUrl, adminuser);
     }
 }

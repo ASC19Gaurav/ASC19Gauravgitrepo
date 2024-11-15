@@ -11,6 +11,7 @@ import { DashboardComponent } from "./Dashboard/dashboard.component";
 import { LoginComponent } from "./login/login.component";
 import { UpdateComponent } from "./update/update.component";
 import { AuthGuardService } from "./service/authservice";
+import { SignupComponent } from "./signup/signup.component";
 
 
 
@@ -21,7 +22,8 @@ const routes: Routes = [
     {path:'register',component:RegisterComponent,canActivate:[AuthGuardService]},
     {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuardService]},
     {path: 'update', component: UpdateComponent,canActivate:[AuthGuardService]},
-    {path:'login',component:LoginComponent}
+    {path:'login',component:LoginComponent},
+    {path:'signup',component:SignupComponent}
     
   ];
 

@@ -17,10 +17,11 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateComponent } from './update/update.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
-  declarations: [AppComponent,HomeComponent,NavbarComponent,DashboardComponent,RegisterComponent,LoginComponent,UpdateComponent],
+  declarations: [AppComponent,HomeComponent,NavbarComponent,DashboardComponent,RegisterComponent,LoginComponent,UpdateComponent,SignupComponent],
   imports: [BrowserModule, BrowserAnimationsModule,CommonModule,MaterialModule,RouterModule,AppRoutingModule,ReactiveFormsModule,FormsModule],
   providers:[HttpClient,provideHttpClient(), provideAnimationsAsync()],
   bootstrap: [AppComponent]

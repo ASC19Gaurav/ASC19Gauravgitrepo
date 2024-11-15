@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup,Validator,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthGuardService } from '../service/authservice';
+import { IssueEnrollment } from '../service/issueservice';
 
 
 
@@ -15,7 +16,7 @@ export class LoginComponent {
 
   loginForm:FormGroup;
 
-  constructor(private fb:FormBuilder,private router:Router,protected authservice:AuthGuardService){
+  constructor(private fb:FormBuilder,private router:Router,protected authservice:AuthGuardService,private service:IssueEnrollment){
     this.loginForm = this.fb.group({
       
       email:['',[Validators.required,Validators.email]],
@@ -28,20 +29,26 @@ export class LoginComponent {
   onSubmit(){
     if(this.loginForm.valid){
       const {email , password}=this.loginForm.value;
+      this.service.getAuthUsers().subscribe(
+        (data) => {
+          
+          const user = data.find((u) => u.email === email && u.password === password);
 
-      if(this.emailid==email &&this.password == password){
-        alert("Login Succesful!!");
-        this.authservice.isLoggedIn();
-        sessionStorage.setItem('loggedIn', 'yes');
-        this.router.navigate(['/home']);
-
-
-      }
-      else {
-        alert('Invalid Email Id or Password')
-      }
-
+          if (user) {
+            alert('Succesfully Login')
+            sessionStorage.setItem('loggedin', 'yes');
+            this.router.navigate(['/home']);
+            
+          } else {
+            alert('Login Failed,Try Again')
+          }
+        },
+        (error) => {
+          console.error('Error fetching user data:', error);
+         
+        }
+      );
+     
     }
-
   }
 }
