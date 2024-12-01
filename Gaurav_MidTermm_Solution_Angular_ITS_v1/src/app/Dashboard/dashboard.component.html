@@ -4,9 +4,9 @@
 
 <button class="crud" *ngIf="showCheckboxes" (click)="deleteSelectedUsers()" 
 style="background-color: rgb(255, 25, 71);">Confirm Delete</button>
-<br><br>
 
-<button style="color: blue;" class="crud" (click)="search()">Search</button>
+
+<button class="crud" (click)="search()">Search</button>
 <select style="width: 20%;" *ngIf="showSearchbox"  [(ngModel)]="searchproperty" id="searchoption">
     <option value="title">Title</option>
     <option value="status">Status</option>
@@ -16,10 +16,10 @@ style="background-color: rgb(255, 25, 71);">Confirm Delete</button>
 </select>
 <input *ngIf="showSearchbox"  id="search" name="search"  [(ngModel)]="searchvalue"  required>
 <button (click)=search() *ngIf="showSearchbox">Search</button>
-<br><br>
+
 
 <button class="crud" routerLink="/register">Add Issue</button>
-<br><br>
+
 <button class="crud" routerLink="/update"> Update</button>
 <br><br>
 

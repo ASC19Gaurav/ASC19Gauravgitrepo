@@ -2,9 +2,7 @@
 <div class="container">
   <h1 style="color: black;">Sign Up</h1>
     <form #adminForm="ngForm" (ngSubmit)="onSubmit(adminForm)">
-      <!-- {{ adminForm.value | json }}
-      <hr />
-      {{ userModel | json }} -->
+      
   
       <label for="name">Full Name:</label>
       <input type="text" id="name" name="name" required [(ngModel)]="userModel.name" />

@@ -1,33 +1,5 @@
 {
-  "issues": [
-    {
-      "id": "I001",
-      "title": "Money issue",
-      "priorty": "high",
-      "status": "open",
-      "assignee": "Gaurav Singh",
-      "date": "2024-11-08",
-      "description": "Urgent!!"
-    },
-    {
-      "id": "I009",
-      "title": "Good",
-      "priorty": "low",
-      "status": "resolved",
-      "assignee": "rohit",
-      "date": "2024-11-25",
-      "description": "yoyo"
-    },
-    {
-      "id": "I006",
-      "title": "hat",
-      "priorty": "medium",
-      "status": "closed",
-      "assignee": "Gaurav Singh",
-      "date": "2024-11-10",
-      "description": "hey"
-    }
-  ],
+  "issues": [],
   "adminusers": [
     {
       "id": "c911",
@@ -92,6 +64,14 @@
       "phone": 9812238475,
       "email": "gaurav@singh.com",
       "password": "password"
+    },
+    {
+      "id": "57b7",
+      "name": "Subbu",
+      "age": 28,
+      "phone": 9812238475,
+      "email": "subbu@gmail.com",
+      "password": "subbu12345"
     }
   ]
 }
