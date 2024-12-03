@@ -1,0 +1,58 @@
+
+.home{
+    background-image: url('/public/home.jpg'); 
+    
+    
+}
+.example-spacer {
+    flex: 0.8 3 auto;
+  }
+  .header{
+    display: flex;
+  }
+  .home-button {
+    background-color: #3e3c3c;
+    color: white;              
+    border: none;   
+    margin: 15px;           
+    padding: 12px ;        
+    text-align: center;        
+    text-decoration: none;     
+    display: inline-block;     
+    font-size: 16px;          
+    border-radius: 4px;        
+    cursor: pointer;          
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+  }
+  
+  .home-button:hover {
+    background-color: #7e817e; 
+    transform: scale(1.05);     
+  }
+  
+  .home-button:focus {
+    outline: none;            
+  }
+  
+  .example-card {
+    max-width: 260px;
+    text-align: center;
+    margin: 15px;
+  }
+
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;  
+  }
+  mat-card-header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;      
+    padding-bottom: 5px;
+  }
+  
+  mat-card-title {
+    text-align: center;     
+  }

@@ -1,0 +1,50 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-toolbar {
+    background-color: rgba(128, 128, 128, 0.687);
+    color: aliceblue;
+  }
+  
+  mat-icon {
+    color: aliceblue;
+  }
+  
+  .example-container {
+    width: 100%; 
+    height: 100vh; 
+    
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+    width: 200px;
+    height: 450px;
+    position: fixed;
+    top: 12%;
+    
+    background-color: rgba(76, 73, 73, 0.7);
+    border-radius: 10px
+  }
+  ::ng-deep .navbar-list {
+    color: aliceblue;
+  }
+  a{
+    color: aliceblue;
+    text-decoration: none;
+  }
