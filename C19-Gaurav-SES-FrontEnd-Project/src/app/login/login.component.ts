@@ -148,7 +148,7 @@ export class LoginComponent {
         ...this.adminForm.value,
         id: this.generateUniqueId(),
       };
-
+      
       this.service.adminenroll(formData).subscribe({
         next: (response) => {
           console.log('User data saved successfully!', response);

@@ -7,6 +7,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { CommonModule } from "@angular/common";
 import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
+import { MatchRegistrationComponent } from "./match-registration/match-registration.component";
+import { MatchesComponent } from "./matches/matches.component";
+import { UpdateMatchComponent } from "./update-match/update-match.component";
 
 
 
@@ -19,7 +22,12 @@ import { HomeComponent } from "./home/home.component";
 
 const routes: Routes = [
     { path: '', component: LoginComponent },
-    { path: 'home', component: HomeComponent }
+    { path: 'home', component: HomeComponent },
+    {path:'matchregistration',component:MatchRegistrationComponent},
+    { path: 'update/:id', component: UpdateMatchComponent },
+    {path:'matches/:tournamentName',component:MatchesComponent}
+
+
     
   ];
 

@@ -7,33 +7,30 @@
         <span class="example-spacer">  </span>
     
     </h1>
-    <button class="home-button" onclick="">
+    <button class="home-button" [routerLink]="'/matchregistration'">
         Add Tournament
     </button>
 
-    <div class="cards">
-
-    
-
-     <mat-card class="example-card" appearance="outlined">
-        <mat-card-header  >
-          <mat-card-title >Tournament 1</mat-card-title>
+    <div class="cards-container">
+      <mat-card *ngFor="let tournament of matchess" class="example-card" appearance="outlined">
+        <mat-card-header>
+          <mat-card-title>{{ tournament }}</mat-card-title>
         </mat-card-header>
         <div class="image-container">
-            <img style="height: 238px; width: 181px;" matCardImage src="tournament.jpg" alt="Tournament name">
-          </div>
+          <img style="height: 238px; width: 181px;" matCardImage src="tournament.jpg" alt="{{ tournament }}">
+        </div>
         <mat-card-content>
           <p>
-            Tournament Description
+            Tournament Description for {{ tournament }}
           </p>
         </mat-card-content>
-        <mat-card-actions style="margin-left: 20px;">
+        <mat-card-actions>
           <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
+          <button mat-button [routerLink]="['/matches', tournament]">VIEW MATCHES</button>
         </mat-card-actions>
       </mat-card>
-
     </div>
+    
     
 </div>
 

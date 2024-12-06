@@ -1,3 +1,4 @@
+
 package com.sports.springboot.controller;
 
 import com.sports.springboot.service.AdminService;
@@ -18,18 +19,10 @@ public class AdminController {
         return adminService.getAllUsers();
     }
 
-    @GetMapping("/{id}")
-    public Admin getUserById(@PathVariable Long id) {
-        return adminService.getUserById(id);
-    }
-
     @PostMapping
     public Admin createUser(@RequestBody Admin user) {
         return adminService.createUser(user);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
-        adminService.deleteUser(id);
-    }
+
 }

@@ -45,7 +45,7 @@ public class Admin {
         this.password = password;
     }
 
-    // Getters and Setters
+
     public String getId() {
         return id;
     }

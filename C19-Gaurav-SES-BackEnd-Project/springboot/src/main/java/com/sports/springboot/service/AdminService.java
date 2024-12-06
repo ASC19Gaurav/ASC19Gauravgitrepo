@@ -21,11 +21,5 @@ public class AdminService {
         return AdminRepo.save(user);
     }
 
-    public Admin getUserById(Long id) {
-        return AdminRepo.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
-    }
 
-    public void deleteUser(Long id) {
-        AdminRepo.deleteById(id);
-    }
 }
