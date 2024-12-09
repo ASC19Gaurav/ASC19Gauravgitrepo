@@ -21,5 +21,9 @@ public class AdminService {
         return AdminRepo.save(user);
     }
 
+    public Void deleteAdmin(String id) {
+        AdminRepo.deleteById(id);
+        return null;
+    }
 
 }

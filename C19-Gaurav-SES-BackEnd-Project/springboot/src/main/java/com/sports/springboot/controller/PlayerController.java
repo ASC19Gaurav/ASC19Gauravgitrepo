@@ -1,4 +1,5 @@
 package com.sports.springboot.controller;
+import com.sports.springboot.entity.Match;
 import com.sports.springboot.entity.Player;
 import com.sports.springboot.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,11 +37,23 @@ public class PlayerController {
         return playerService.addPlayer(player);
     }
 
+    @GetMapping("/team-Players")
+    public List<Player> getTeamPlayers(@RequestParam String teamName) {
+        return playerService.getTeamPlayers(teamName);
+    }
+
+
+    @PutMapping("/{id}")
+    public Player updatePlayer(@PathVariable String id, @RequestBody Player updatedPlayer) {
+        System.out.println("Updating player with ID: " + id);
+        System.out.println("Updated Player Data: " + updatedPlayer);
+        return playerService.updatePlayer(id, updatedPlayer);
+    }
 
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePlayer(@PathVariable String id) {
-        playerService.deletePlayer(id);
-        return ResponseEntity.noContent().build();
+    public Void deleteTeams(@PathVariable String id) {
+        return playerService.deleteTeams(id);
+
     }
 }

@@ -19,14 +19,7 @@ export class LoginComponent {
   interval: any;
 
   users: AdminUser[] = [];
-  userModel = new AdminUser(
-    'Gaurav',
-    21,
-    9812238475,
-    'gaurav@singh.com',
-    'Gaurav2'
-  );
-
+ 
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -80,7 +73,9 @@ export class LoginComponent {
 
           if (user) {
             alert('Successfully Login');
+            
             sessionStorage.setItem('loggedin', 'yes');
+            sessionStorage.setItem('userLoggedIn',user.name)
             this.router.navigate(['/home']);
             this.resetLoginAttempts();
           } else {
@@ -104,11 +99,7 @@ export class LoginComponent {
 
   activateLockout() {
     this.isLockedOut = true;
-    this.lockoutTime = 300;
-  
-    
-  
-   
+    this.lockoutTime = 5;
     sessionStorage.setItem('lockoutTime', this.lockoutTime.toString());
     sessionStorage.setItem('lockoutTimestamp', Date.now().toString());
   

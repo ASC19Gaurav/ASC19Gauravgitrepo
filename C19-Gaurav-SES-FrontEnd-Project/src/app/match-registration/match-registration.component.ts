@@ -36,6 +36,8 @@ export class MatchRegistrationComponent {
       playerName: ['', Validators.required],
       playerAge: ['', [Validators.required, Validators.min(1)]],
       teamName: ['', Validators.required],
+      phoneNumber:['',Validators.required]
+      
     });
   }
 
@@ -44,7 +46,7 @@ export class MatchRegistrationComponent {
       const formData = {
         ...this.matchForm.value,
         id: this.generateUniqueId(),
-      };
+      };  
 
       
       this.matchService.adminenroll(formData).subscribe({
@@ -79,6 +81,11 @@ export class MatchRegistrationComponent {
     return id;
   }
 
+  addMore(){
+    this.router.navigate(['/home']); 
+    
+  }
+
 
   onPlayerSubmit(){
     if (this.playerForm.valid) {
@@ -91,8 +98,9 @@ export class MatchRegistrationComponent {
       this.playerService.playerEnroll(formData).subscribe({
         next: (response) => {
           console.log('User data saved successfully!', response);
-
-          this.router.navigate(['/home']); 
+          this.playerForm.reset();
+          
+          
         },
         error: (error) => {
           console.error('Error saving user data:', error);

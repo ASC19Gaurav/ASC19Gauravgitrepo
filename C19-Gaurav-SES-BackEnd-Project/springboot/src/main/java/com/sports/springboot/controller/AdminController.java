@@ -24,5 +24,11 @@ public class AdminController {
         return adminService.createUser(user);
     }
 
+    @DeleteMapping("/{id}")
+    public Void deleteAdmin(@PathVariable String id) {
+        return adminService.deleteAdmin(id);
+
+    }
+
 
 }

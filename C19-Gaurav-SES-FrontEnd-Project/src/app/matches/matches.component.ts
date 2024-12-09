@@ -57,6 +57,10 @@ updateMatch(matchId: string | undefined): void {
   }
 }
 
+fullDetails(matchName:string,team1Name:string,team2Name:string){
+  this.router.navigate(["fullDetail",matchName,team1Name,team2Name])
+}
+
 onSearch() {
   console.log('Searching for:', this.searchQuery);
   if (this.searchQuery.trim() === '') {

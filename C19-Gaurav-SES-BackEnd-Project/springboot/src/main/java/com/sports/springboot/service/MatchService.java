@@ -27,8 +27,9 @@ public class MatchService {
         return matchRepository.findMatchesByTournament(tournamentName);
     }
 
-    public void deleteMatch(String id) {
+    public Void deleteMatch(String id) {
         matchRepository.deleteById(id);
+        return null;
     }
 
 

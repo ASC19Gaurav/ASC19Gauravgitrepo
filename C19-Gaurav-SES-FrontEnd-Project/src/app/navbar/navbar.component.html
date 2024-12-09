@@ -5,9 +5,17 @@
     </button>
     <span>My App</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button aria-label="Profile">
-      <mat-icon>account_circle</mat-icon>
-    </button>
+
+    <a style="margin-left: 40px;" routerLink="/viewAllMatches">View all Matches</a>
+    <a routerLink="/viewAllMatches">Book Tickets</a>
+    <span class="example-spacer"></span>
+    <h4>{{ loggedInUserName }}</h4>
+    
+    <button mat-icon-button aria-label="Profile" [matMenuTriggerFor]="belowMenu"><mat-icon>account_circle</mat-icon></button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+  <button routerLink="/viewAdmins" mat-menu-item>View All Admin</button>
+  <button mat-menu-item>LogOut</button>
+</mat-menu>
     <button mat-icon-button aria-label="Share">
       <mat-icon>share</mat-icon>
     </button>

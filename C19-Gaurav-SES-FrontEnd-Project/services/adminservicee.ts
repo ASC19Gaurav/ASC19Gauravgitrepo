@@ -19,4 +19,9 @@ export class AdminServices{
     adminenroll(adminuser: AdminUser): Observable<any> {
         return this.http.post<any>(this.authUrl, adminuser);
     }
+    deleteAdmin(id: string): Observable<void> {
+        return this.http.delete<void>(`${this.authUrl}/${id}`);
+    }
+
+
 }

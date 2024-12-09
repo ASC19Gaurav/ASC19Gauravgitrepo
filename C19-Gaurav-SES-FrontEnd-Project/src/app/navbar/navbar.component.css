@@ -9,7 +9,7 @@
   }
   
   mat-toolbar {
-    background-color: rgba(128, 128, 128, 0.687);
+    background-color: rgba(101, 101, 101, 0.79);
     color: aliceblue;
   }
   
@@ -45,6 +45,17 @@
     color: aliceblue;
   }
   a{
-    color: aliceblue;
+    color: white;
     text-decoration: none;
-  }
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+    transition: transform 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline red;
+    cursor: pointer;
+    transform: scale(1.1);
+    }

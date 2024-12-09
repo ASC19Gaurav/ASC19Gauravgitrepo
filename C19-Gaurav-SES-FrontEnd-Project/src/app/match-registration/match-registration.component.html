@@ -2,7 +2,7 @@
 </app-navbar>
 
 
-  <mat-stepper style="background: none;" [linear]="isLinear" #stepper>
+  <mat-stepper class="matSteper" style="background: none;" [linear]="true" #stepper>
     <mat-step [stepControl]="matchForm">
         <div class="match-registration-form">
             <h1 style="display: flex;justify-content: center;text-align: center;">Match Registration</h1>
@@ -73,6 +73,7 @@
     <mat-step>
       <div class="form-container">
         <form [formGroup]="playerForm" (ngSubmit)="onPlayerSubmit()">
+          <h1 style="display: flex;justify-content: center;text-align: center;">ADD PLAYERS</h1>
           
           <div class="form-group">
             <label for="playerName">Player Name:</label>
@@ -128,7 +129,9 @@
               Phone Number must be a valid 10-digit number.
             </div>
           </div>
-          <button type="submit" [disabled]="playerForm.invalid">Submit</button>
+          <button type="submit" style="margin-bottom: 5px;" [disabled]="playerForm.invalid">AddMore</button>
+          <button type="submit" (click)="addMore()" [disabled]="playerForm.invalid">Submit</button>
+         
         </form>
       </div>
       

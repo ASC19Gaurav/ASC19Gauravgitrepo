@@ -33,9 +33,9 @@ export class MatchServices{
       deleteMatch(id:string):Observable<void> {
         return this.http.delete<void>(`${this.matchUrl}/${id}`);
     }
-    updateMatch(id:string, employee:any) {
+    updateMatch(id:string, match:any) {
         
-        return this.http.put(`${this.matchUrl}/${id}`, employee);
+        return this.http.put(`${this.matchUrl}/${id}`, match);
     }
     getMatchById(id: string) {
         return this.http.get<Matches>(`${this.matchUrl}/${id}`);

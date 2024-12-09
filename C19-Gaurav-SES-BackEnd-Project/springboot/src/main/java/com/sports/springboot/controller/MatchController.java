@@ -37,9 +37,9 @@ public class MatchController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMatch(@PathVariable String id) {
-        matchService.deleteMatch(id);
-        return ResponseEntity.noContent().build();
+    public Void deleteMatch(@PathVariable String id) {
+        return matchService.deleteMatch(id);
+
     }
     @GetMapping("/{id}")
     public Match getMatchById(@PathVariable String id) {
