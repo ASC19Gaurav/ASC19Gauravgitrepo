@@ -1,9 +1,9 @@
 <app-navbar> </app-navbar>
 <div class="container">
     <h2>Admin Users</h2>
-    <button class="crud" (click)="toggleCheckboxes()">Delete</button>
-    <button class="crud" *ngIf="showCheckboxes" (click)="openBottomSheet()" 
-style="background-color: rgb(255, 25, 71);">Confirm Delete</button>
+    <button mat-raised-button style="color: aliceblue;background-color: rgba(0, 81, 255, 0.753);" class="crud" (click)="toggleCheckboxes()">Delete</button>
+    <button mat-button class="crud" *ngIf="showCheckboxes" (click)="openBottomSheet()" 
+style="background-color: rgba(255, 25, 71, 0.795);color: aliceblue;">Confirm Delete</button>
   
     <div *ngIf="isLoading" class="loading">
       <p>Loading admin users...</p>

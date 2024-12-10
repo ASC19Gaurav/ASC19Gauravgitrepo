@@ -1,6 +1,5 @@
 package com.sports.springboot.service;
 
-import com.sports.springboot.entity.Match;
 import com.sports.springboot.entity.Player;
 import com.sports.springboot.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +40,7 @@ public class PlayerService {
             existingPlayer.setPlayerName(updatedPlayer.getPlayerName());
             existingPlayer.setPlayerAge(updatedPlayer.getPlayerAge());
             existingPlayer.setTeamName(updatedPlayer.getTeamName());
-            existingPlayer.setPlayerPhone(updatedPlayer.getPlayerPhone());
+            existingPlayer.setPhoneNo(updatedPlayer.getPhoneNo());
             return playerRepository.save(existingPlayer);
         }).orElseThrow(() -> new RuntimeException("Player not found with id: " + id));
     }

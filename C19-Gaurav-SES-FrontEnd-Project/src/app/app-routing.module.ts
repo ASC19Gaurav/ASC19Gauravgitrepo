@@ -14,6 +14,9 @@ import { FullDetailsComponent } from "./full-details/full-details.component";
 import { UpdatePlayerComponent } from "./update-player/update-player.component";
 import { ViewAdminComponent } from "./view-admin/view-admin.component";
 import { ViewAllMatchesComponent } from "./view-all-matches/view-all-matches.component";
+import { AuthGuardService } from "../../services/authservice";
+import { BookTicketsComponent } from "./book-tickets/book-tickets.component";
+import { TicketsComponent } from "./tickets/tickets.component";
 
 
 
@@ -26,14 +29,18 @@ import { ViewAllMatchesComponent } from "./view-all-matches/view-all-matches.com
 
 const routes: Routes = [
     { path: '', component: LoginComponent },
-    { path: 'home', component: HomeComponent },
-    {path:'matchregistration',component:MatchRegistrationComponent},
-    { path: 'update/:id', component: UpdateMatchComponent },
-    {path:'matches/:tournamentName',component:MatchesComponent},
-    { path: 'fullDetail/:matchName/:team1Name/:team2Name', component: FullDetailsComponent },
-    { path: 'updatePlayer/:id', component: UpdatePlayerComponent },
-    { path: 'viewAdmins', component: ViewAdminComponent },
-    {path:'viewAllMatches',component:ViewAllMatchesComponent}
+    {path:'login',component:LoginComponent},
+    { path: 'home', component: HomeComponent,canActivate:[AuthGuardService] },
+    {path:'matchregistration',component:MatchRegistrationComponent,canActivate:[AuthGuardService]},
+    { path: 'update/:id', component: UpdateMatchComponent,canActivate:[AuthGuardService] },
+    {path:'matches/:tournamentName',component:MatchesComponent,canActivate:[AuthGuardService]},
+    { path: 'fullDetail/:matchName/:team1Name/:team2Name', component: FullDetailsComponent,canActivate:[AuthGuardService] },
+    { path: 'updatePlayer/:id', component: UpdatePlayerComponent,canActivate:[AuthGuardService] },
+    { path: 'viewAdmins', component: ViewAdminComponent,canActivate:[AuthGuardService] },
+    {path:'viewAllMatches',component:ViewAllMatchesComponent,canActivate:[AuthGuardService]},
+    {path:'bookTicket',component:BookTicketsComponent,canActivate:[AuthGuardService]},
+    {path:'tickets',component:TicketsComponent,canActivate:[AuthGuardService]}
+
   ];
 
 @NgModule({

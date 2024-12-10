@@ -3,7 +3,7 @@ export class Player{
       public id:string,
        public playerName: string,
        public playerAge : number,
-       public playerPhone: string,
+       public phoneNo: string,
        public teamName   :string
       
      ){

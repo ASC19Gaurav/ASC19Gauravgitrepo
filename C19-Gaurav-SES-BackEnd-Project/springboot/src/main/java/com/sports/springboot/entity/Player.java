@@ -15,8 +15,8 @@ public class Player {
 
     private int playerAge;
 
-    @Column(name = "player_phone")
-    private String playerPhone;
+
+    private String phoneNo;
 
 
 
@@ -26,11 +26,11 @@ public class Player {
 
     public Player() {}
 
-    public Player(String id,String playerName, int playerAge, String playerPhone, String teamName) {
+    public Player(String id,String playerName, int playerAge, String phoneNo, String teamName) {
         this.id = id;
         this.playerName = playerName;
         this.playerAge = playerAge;
-        this.playerPhone = playerPhone;
+        this.phoneNo = phoneNo;
 
         this.teamName = teamName;
     }
@@ -60,12 +60,12 @@ public class Player {
         this.playerAge = playerAge;
     }
 
-    public String getPlayerPhone() {
-        return playerPhone;
+    public String getPhoneNo() {
+        return phoneNo;
     }
 
-    public void setPlayerPhone(String playerPhone) {
-        this.playerPhone = playerPhone;
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
     }
 
 

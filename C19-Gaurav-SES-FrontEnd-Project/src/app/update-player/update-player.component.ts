@@ -42,7 +42,7 @@ export class UpdatePlayerComponent implements OnInit{
           playerName: data.playerName,
           playerAge: data.playerAge,
           teamName: data.teamName,
-          phoneNumber: data.playerPhone,
+          phoneNumber: data.phoneNo,
         });
       },
       (error) => console.log(error)

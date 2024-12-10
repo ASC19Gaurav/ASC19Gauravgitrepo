@@ -18,7 +18,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 const MaterialComponents =[
-    
+    MatTooltipModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
@@ -29,7 +29,7 @@ const MaterialComponents =[
     MatButtonModule,
     MatListModule,
     MatCardModule,
-    MatTooltipModule,
+    
     MatExpansionModule,
     MatStepperModule,
     MatMenuModule,

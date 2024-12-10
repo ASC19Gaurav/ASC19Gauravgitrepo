@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AdminServices } from '../../../services/adminservicee';
 import { AdminUser } from '../../../model/admins';
 
+
 @Component({
   selector: 'app-login',
 
@@ -72,7 +73,7 @@ export class LoginComponent {
           );
 
           if (user) {
-            alert('Successfully Login');
+            
             
             sessionStorage.setItem('loggedin', 'yes');
             sessionStorage.setItem('userLoggedIn',user.name)
@@ -88,18 +89,19 @@ export class LoginComponent {
       );
     }
   }
+
   handleFailedLogin() {
     this.loginAttempts++;
     if (this.loginAttempts >= 3) {
       this.activateLockout();
     } else {
-      alert(`Invalid login. ${3 - this.loginAttempts} attempts left.`);
+      // alert(`Invalid login. ${3 - this.loginAttempts} attempts left.`);
     }
   }
 
   activateLockout() {
     this.isLockedOut = true;
-    this.lockoutTime = 5;
+    this.lockoutTime = 30;
     sessionStorage.setItem('lockoutTime', this.lockoutTime.toString());
     sessionStorage.setItem('lockoutTimestamp', Date.now().toString());
   

@@ -36,7 +36,7 @@ export class MatchRegistrationComponent {
       playerName: ['', Validators.required],
       playerAge: ['', [Validators.required, Validators.min(1)]],
       teamName: ['', Validators.required],
-      phoneNumber:['',Validators.required]
+      phoneNo:['',Validators.required]
       
     });
   }

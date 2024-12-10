@@ -1,6 +1,6 @@
 <div class="container">
     <form [formGroup]="deleteForm" (ngSubmit)="confirmDelete()">
-      
+      <h3>Super Admin Verification</h3>
       <div class="form-group">
         <label for="email">Super Admin Email</label>
         <input
@@ -36,7 +36,7 @@
   
       
       <div class="actions">
-        <button
+        <button mat-button
           type="submit"
           class="btn btn-danger"
           [disabled]="deleteForm.invalid"

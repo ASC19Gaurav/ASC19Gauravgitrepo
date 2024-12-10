@@ -21,6 +21,8 @@ import { FullDetailsComponent } from './full-details/full-details.component';
 import { UpdatePlayerComponent } from './update-player/update-player.component';
 import { BottomSheet, ViewAdminComponent } from './view-admin/view-admin.component';
 import { ViewAllMatchesComponent } from './view-all-matches/view-all-matches.component';
+import { BookTicketsComponent } from './book-tickets/book-tickets.component';
+import { TicketsComponent } from './tickets/tickets.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { ViewAllMatchesComponent } from './view-all-matches/view-all-matches.com
     FullDetailsComponent,
     ViewAdminComponent,
     BottomSheet,
-    ViewAllMatchesComponent
+    ViewAllMatchesComponent,
+    BookTicketsComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,

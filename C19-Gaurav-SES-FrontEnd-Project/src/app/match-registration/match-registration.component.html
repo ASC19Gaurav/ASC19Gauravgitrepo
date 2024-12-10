@@ -118,19 +118,19 @@
       
           
           <div class="form-group">
-            <label for="phoneNumber">Phone Number:</label>
+            <label for="phoneNo">Phone Number:</label>
             <input 
               type="tel" 
-              id="phoneNumber" 
-              formControlName="phoneNumber" 
+              id="phoneNo" 
+              formControlName="phoneNo" 
               placeholder="Enter Phone Number"
             />
-            <div *ngIf="playerForm.get('phoneNumber')?.invalid && playerForm.get('phoneNumber')?.touched" class="error">
+            <div *ngIf="playerForm.get('phoneNo')?.invalid && playerForm.get('phoneNo')?.touched" class="error">
               Phone Number must be a valid 10-digit number.
             </div>
           </div>
           <button type="submit" style="margin-bottom: 5px;" [disabled]="playerForm.invalid">AddMore</button>
-          <button type="submit" (click)="addMore()" [disabled]="playerForm.invalid">Submit</button>
+          <button type="submit" (click)="addMore()">Submit</button>
          
         </form>
       </div>
